@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Post Graduation Admission Prediction</title>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+      
+      li {
+        float: right;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 18px 20px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: #111;
+      }
+
+      html, body {
+      min-height: 100%;
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #FC766AFF;
+        }
+      h1 {
+      margin: 0 0 20px;
+      font-weight: 400;
+      color: #FC766AFF;
+      }
+      label {
+      margin: 0 0 0px;
+      font-weight: 50;
+      color: #5B84B1FF;
+      font-size: 18px;
+      }
+      p {
+      margin: 0 0 5px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 75vh;
+      background-image: url("static/img/background image.jpg");
+    background-size: cover; /* Resize the background image to cover the entire container */
+  
+      }
+      form {
+      padding: 25px;
+      margin: 25px;
+      width: 50%;
+      box-shadow: 0 2px 5px #f5f5f5; 
+      background: #f5f5f5;
+      border: 2px solid #FC766AFF;
+      border-radius: 8px;
+      }
+      input, textarea {
+      width: calc(50% - 18px);
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 2px solid #FC766AFF;
+      border-radius: 4px;
+      outline: none;
+      }
+      input::placeholder {
+      color: #666;
+      }
+      input {
+        display: block;
+      }
+      button {
+      width: 50%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #FC766AFF; 
+      font-size: 16px;
+      font-weight: 400;
+      color: #fff;
+      }
+      button:hover {
+      background: ;
+      }   
+      @media screen and (max-width: 600px) {
+      .main-block {
+      flex-direction: row;
+      }
+      }
+      .left-part, form {
+      width: 50%;
+      }
+      .result{
+        position: absolute;
+        visibility: visible;
+        top: 70%;
+        right: 25%;
+        width: 15%;
+        height: 15%;
+        border: 3px solid #FC766AFF;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #f5f5f5;
+        text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+
+    <ul>
+      <li><a class="active" href="mailto:prasad0642@gmail.com">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+    </ul>
+    <div>
+    <div class="main-block">
+      <div class="left-part">
+      </div>
+      
+      <form action="{{url_for('predict')}}" method="post">
+        <section>
+        <center><h1><b>Post Graduation Admission Prediction</b></h1></center>
+        <p>This Web Application is processed by a Machine Learning Algorithm to predict the individual having Chance of Admission for the post graduation. </p>
+        <p><i>Note: that this model is 97% accurate</i></p>
+        <div class="info">
+        	  <p><b>Please Enter values for the following:</b></p><br>
+            <label>Enter Your GRE Score : </label><br><br>
+         <input type="number" name="GRE Score" placeholder="GRE score" required>
+          <label>Enter your TOEFL Score :</label><br><br>
+           <input type="number" name="TOEFL Score" placeholder="TOEFL Score" required>
+           <label> Enter your University Rating : </label><br><br>
+           <input type="number"  name="University Rating" placeholder="University Rating" required>
+           <label> Enter Your Statement Of Purpose Rating : </label><br><br>
+           <input type="number" name="SOP" step="0.01" placeholder="SOP Rating" required>
+           <label> Enter Your Letter Of Recommendation Rating : </label><br><br>
+           <input type="number" name="LOR" step="0.01" placeholder="LOR Rating" required>
+           <label> Enter Your CGPA : </label><br><br>
+           <input type="number" name="CGPA" step="0.01" placeholder="CGPA" required>
+           <label>Research(0/1) : </label><br><br>
+           <input type="number" name="Research" placeholder="Research" required>
+        </div>
+        <center><button type="submit" value="predict">Predict</button></center>
+        <div class = "result">
+            <h2>Result</h2>
+            <p>{{result}}</p>
+        </div>
+        </section>
+      </form>
+    </div>
+  </body>
+</html>
