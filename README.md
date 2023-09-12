@@ -83,7 +83,7 @@ Graduation Amission Prediction is used to predict the chance of admission using 
 
    * Graduation admission prediction will help the student to know whether he has a possibility of getting a chance in the graduation using their GRE Score, TOEFL score , University Rating, SOP Rating, LOR Rating, GPA, Research. In this Project the user can give the input values of attributes through the form of the webpage and it displays output as “You have a Chance of Admission” or “You do not have a chance of Admission” i.e., Having chance for the admission in the Graduation or not.
 
-
+__ This project done by the prasad Reddy ChagamaReddy.
 
 
 
